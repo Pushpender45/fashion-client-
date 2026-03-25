@@ -1,0 +1,320 @@
+/* --- PDP Layout --- */
+.pdp-main {
+    padding-top: calc(var(--navbar-height) + 40px);
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-bottom: var(--spacing-xl);
+}
+
+.pdp-breadcrumbs {
+    font-size: 11px;
+    color: #e67e22; 
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    padding: 0 var(--spacing-md);
+}
+
+.pdp-container {
+    display: grid;
+    grid-template-columns: 80px 1fr 400px;
+    gap: 40px;
+    padding: 0 var(--spacing-md);
+    align-items: start;
+}
+
+/* LEFT: Gallery Thumbs */
+.gallery-thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: sticky;
+    top: 120px;
+}
+
+.thumb {
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.thumb img {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    display: block;
+}
+
+.thumb span {
+    font-size: 10px;
+    font-weight: 700;
+    display: block;
+    margin-top: 5px;
+}
+
+.thumb.active {
+    opacity: 1;
+    border-bottom: 2px solid var(--color-black);
+}
+
+/* CENTER: Main Image */
+.main-image-viewport {
+    position: relative;
+    width: 100%;
+}
+
+.main-image-viewport img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.4s ease;
+}
+
+.brand-signature {
+    position: absolute;
+    bottom: 20%;
+    left: -50px;
+    transform: rotate(-90deg);
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-style: italic;
+    color: #e74c3c; /* Red cursive signature look */
+    opacity: 0.6;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+/* RIGHT: Details Panel */
+.product-details-panel {
+    position: sticky;
+    top: 120px;
+}
+
+.details-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: var(--spacing-md);
+}
+
+.info-row {
+    margin-bottom: 15px;
+}
+
+.info-row .label {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.product-name {
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.model-desc {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Size Selector */
+.size-selector {
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid #eee;
+}
+
+.sizes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.size-btn {
+    width: 45px;
+    height: 35px;
+    background: white;
+    border: 1px solid #eee;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.size-btn:hover {
+    border-color: var(--color-black);
+}
+
+.size-btn.selected {
+    background: #ff5e3a; /* Orange/Red selected color as in Masons site */
+    border-color: #ff5e3a;
+    color: white;
+}
+
+.size-btn.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+    text-decoration: line-through;
+}
+
+/* Accordions */
+.accordion {
+    border-bottom: 1px solid #eee;
+}
+
+.accordion-trigger {
+    width: 100%;
+    padding: 15px 0;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.accordion-content {
+    display: none;
+    padding-bottom: 15px;
+    font-size: 11px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Stock Status */
+.stock-status {
+    padding: 15px 0;
+    font-size: 11px;
+    font-weight: 700;
+    color: #ff5e3a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stock-status .dot {
+    width: 8px;
+    height: 8px;
+    background: #ff5e3a;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* CTA Buttons */
+.cta-group {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-black {
+    background: var(--color-black);
+    color: white;
+    border: none;
+    width: 100%;
+}
+
+.btn-shop {
+    background: #5a31f4; /* Shopify blue/purple */
+    color: white;
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+
+.shop-logo {
+    margin-left: 5px;
+    font-style: italic;
+}
+
+.payment-options {
+    font-size: 10px;
+    text-align: center;
+    text-decoration: underline;
+    color: #999;
+    display: block;
+}
+
+/* Shop the look */
+.shop-the-look {
+    padding-top: var(--spacing-xl);
+}
+
+.look-title {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-md);
+}
+
+.look-item {
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    background: #fdfdfd;
+    border: 1px solid #f9f9f9;
+}
+
+.look-item img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.look-name {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .pdp-container {
+        grid-template-columns: 80px 1fr;
+    }
+    
+    .product-details-panel {
+        grid-column: span 2;
+        position: static;
+        padding-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pdp-container {
+        display: block;
+    }
+    
+    .gallery-thumbs {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 20px;
+        position: static;
+    }
+    
+    .thumb img {
+        width: 50px;
+        height: 70px;
+    }
+    
+    .brand-signature {
+        display: none;
+    }
+}
